@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int a[50];
+	int n,i=0,j=0;
+	printf("enter any num:");
+	scanf("%d",&n);
+	for(j=0;j<n;j++)
+	{
+		printf("enter any num:%d",i+1);
+		scanf("%d",&a[i]);
+	}
+	int b=a[0];
+	int c=a[1];
+	for(i=0;i<n;i++)
+	{
+		for(j=b+1;j<c;j++)
+		{
+			printf("missing elements:%d",j);
+		}
+		b=a[i+1];
+		c=a[i+2];
+	}
+	}
