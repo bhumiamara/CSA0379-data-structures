@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define ARRAY_SIZE 5
+
+bool searchRegistrationNumber(const char *regNumbers[], const char *targetRegNo) {
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        if (strcmp(regNumbers[i], targetRegNo) == 0) {
+            return true; // Found the registration number
+        }
+    }
+    return false; // Registration number not found
+}
+
+int main() {
+    const char *registrationNumbers[ARRAY_SIZE] = {
+        "ABC123",
+        "DEF456",
+        "GHI789",
+        "JKL012",
+        "MNO345"
+    };
+
+    const char *searchRegNo = "GHI789";
+    if (searchRegistrationNumber(registrationNumbers, searchRegNo)) {
+        printf("Registration number %s found!\n", searchRegNo);
+    } else {
+        printf("Registration number %s not found.\n", searchRegNo);
+    }
+
+    return 0;
+}
